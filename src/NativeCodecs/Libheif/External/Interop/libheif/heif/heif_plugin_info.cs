@@ -11,7 +11,6 @@ internal unsafe partial struct heif_plugin_info
 {
     public int version;
 
-    [NativeTypeName("enum heif_plugin_type")]
     public heif_plugin_type type;
 
     [NativeTypeName("const void *")]

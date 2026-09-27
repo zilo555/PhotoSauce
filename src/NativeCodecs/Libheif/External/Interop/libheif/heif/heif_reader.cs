@@ -63,7 +63,7 @@ internal unsafe partial struct heif_reader
     }
 #endif
 
-    [NativeTypeName("struct heif_reader_range_request_result (*)(uint64_t, uint64_t, void *)")]
+    [NativeTypeName("heif_reader_range_request_result (*)(uint64_t, uint64_t, void *)")]
 #if NET5_0_OR_GREATER
     public delegate* unmanaged[Cdecl]<ulong, ulong, void*, heif_reader_range_request_result> request_range;
 #else

@@ -15,7 +15,7 @@ internal unsafe partial struct heif_decoding_options
     [NativeTypeName("uint8_t")]
     public byte ignore_transformations;
 
-    [NativeTypeName("void (*)(enum heif_progress_step, int, void *)")]
+    [NativeTypeName("void (*)(heif_progress_step, int, void *)")]
 #if NET5_0_OR_GREATER
     public delegate* unmanaged[Cdecl]<heif_progress_step, int, void*, void> start_progress;
 #else
@@ -28,7 +28,7 @@ internal unsafe partial struct heif_decoding_options
     }
 #endif
 
-    [NativeTypeName("void (*)(enum heif_progress_step, int, void *)")]
+    [NativeTypeName("void (*)(heif_progress_step, int, void *)")]
 #if NET5_0_OR_GREATER
     public delegate* unmanaged[Cdecl]<heif_progress_step, int, void*, void> on_progress;
 #else
@@ -41,7 +41,7 @@ internal unsafe partial struct heif_decoding_options
     }
 #endif
 
-    [NativeTypeName("void (*)(enum heif_progress_step, void *)")]
+    [NativeTypeName("void (*)(heif_progress_step, void *)")]
 #if NET5_0_OR_GREATER
     public delegate* unmanaged[Cdecl]<heif_progress_step, void*, void> end_progress;
 #else
@@ -65,7 +65,6 @@ internal unsafe partial struct heif_decoding_options
     [NativeTypeName("const char *")]
     public sbyte* decoder_id;
 
-    [NativeTypeName("struct heif_color_conversion_options")]
     public heif_color_conversion_options color_conversion_options;
 
     [NativeTypeName("int (*)(void *)")]
@@ -80,4 +79,20 @@ internal unsafe partial struct heif_decoding_options
         set => _cancel_decoding = value;
     }
 #endif
+
+    public heif_color_conversion_options_ext* color_conversion_options_ext;
+
+    public int ignore_sequence_editlist;
+
+    public heif_color_profile_nclx* output_image_nclx_profile;
+
+    public int num_library_threads;
+
+    public int num_codec_threads;
+
+    [NativeTypeName("uint8_t")]
+    public byte autocorrect_broken_input;
+
+    [NativeTypeName("uint8_t")]
+    public byte output_image_nclx_profile_passthrough;
 }

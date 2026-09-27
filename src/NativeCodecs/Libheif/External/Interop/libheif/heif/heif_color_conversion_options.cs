@@ -12,10 +12,8 @@ internal partial struct heif_color_conversion_options
     [NativeTypeName("uint8_t")]
     public byte version;
 
-    [NativeTypeName("enum heif_chroma_downsampling_algorithm")]
     public heif_chroma_downsampling_algorithm preferred_chroma_downsampling_algorithm;
 
-    [NativeTypeName("enum heif_chroma_upsampling_algorithm")]
     public heif_chroma_upsampling_algorithm preferred_chroma_upsampling_algorithm;
 
     [NativeTypeName("uint8_t")]

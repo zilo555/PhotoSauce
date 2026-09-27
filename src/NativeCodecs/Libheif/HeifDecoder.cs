@@ -222,8 +222,15 @@ internal sealed unsafe class HeifContainer : IImageContainer
 		{
 			container.ensureHandle();
 
+			var options = heif_decoding_options_alloc();
+			options->num_library_threads = 1;
+			options->num_codec_threads = 1;
+
 			void* img;
-			container.CheckResult(heif_decode_image(container.handle, &img, heif_colorspace.heif_colorspace_RGB, heif_chroma.heif_chroma_interleaved_RGB, null));
+			var res = heif_decode_image(container.handle, &img, heif_colorspace.heif_colorspace_RGB, heif_chroma.heif_chroma_interleaved_RGB, options);
+
+			heif_decoding_options_free(options);
+			container.CheckResult(res);
 
 			var chan = heif_channel.heif_channel_interleaved;
 			if (heif_image_has_channel(img, chan) == 0 || heif_image_get_bits_per_pixel(img, chan) != Format.BitsPerPixel)

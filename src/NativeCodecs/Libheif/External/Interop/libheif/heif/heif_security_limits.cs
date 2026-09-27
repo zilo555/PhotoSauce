@@ -41,4 +41,28 @@ internal partial struct heif_security_limits
 
     [NativeTypeName("uint32_t")]
     public uint max_children_per_box;
+
+    [NativeTypeName("uint64_t")]
+    public ulong max_total_memory;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_sample_description_box_entries;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_sample_group_description_box_entries;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_sequence_frames;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_number_of_file_brands;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_bad_pixels;
+
+    [NativeTypeName("uint32_t")]
+    public uint max_iso23001_17_pixel_size_bytes;
+
+    [NativeTypeName("const struct heif_security_limits *")]
+    public heif_security_limits* parent;
 }

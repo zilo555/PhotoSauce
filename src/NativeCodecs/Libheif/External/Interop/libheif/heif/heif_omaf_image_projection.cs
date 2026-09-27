@@ -7,12 +7,9 @@
 
 namespace PhotoSauce.Interop.Libheif;
 
-internal unsafe partial struct heif_error
+internal enum heif_omaf_image_projection
 {
-    public heif_error_code code;
-
-    public heif_suberror_code subcode;
-
-    [NativeTypeName("const char *")]
-    public sbyte* message;
+    heif_omaf_image_projection_equirectangular = 0x00,
+    heif_omaf_image_projection_cube_map = 0x01,
+    heif_omaf_image_projection_flat = 0xFF,
 }

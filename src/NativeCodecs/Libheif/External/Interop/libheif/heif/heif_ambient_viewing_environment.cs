@@ -7,12 +7,14 @@
 
 namespace PhotoSauce.Interop.Libheif;
 
-internal unsafe partial struct heif_error
+internal partial struct heif_ambient_viewing_environment
 {
-    public heif_error_code code;
+    [NativeTypeName("uint32_t")]
+    public uint ambient_illumination;
 
-    public heif_suberror_code subcode;
+    [NativeTypeName("uint16_t")]
+    public ushort ambient_light_x;
 
-    [NativeTypeName("const char *")]
-    public sbyte* message;
+    [NativeTypeName("uint16_t")]
+    public ushort ambient_light_y;
 }

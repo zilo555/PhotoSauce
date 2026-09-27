@@ -7,15 +7,11 @@
 
 namespace PhotoSauce.Interop.Libheif;
 
-internal partial struct heif_camera_intrinsic_matrix
+internal enum heif_component_datatype
 {
-    public double focal_length_x;
-
-    public double focal_length_y;
-
-    public double principal_point_x;
-
-    public double principal_point_y;
-
-    public double skew;
+    heif_component_datatype_unsigned_integer = 0,
+    heif_component_datatype_floating_point = 1,
+    heif_component_datatype_complex_number = 2,
+    heif_component_datatype_signed_integer = 3,
+    heif_component_datatype_undefined = 0xFF,
 }

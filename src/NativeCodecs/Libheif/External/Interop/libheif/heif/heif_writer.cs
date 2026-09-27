@@ -11,7 +11,7 @@ internal unsafe partial struct heif_writer
 {
     public int writer_api_version;
 
-    [NativeTypeName("struct heif_error (*)(struct heif_context *, const void *, size_t, void *)")]
+    [NativeTypeName("heif_error (*)(heif_context *, const void *, size_t, void *)")]
 #if NET5_0_OR_GREATER
     public delegate* unmanaged[Cdecl]<void*, void*, nuint, void*, heif_error> write;
 #else

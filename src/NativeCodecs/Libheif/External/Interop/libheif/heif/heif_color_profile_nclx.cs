@@ -12,13 +12,10 @@ internal partial struct heif_color_profile_nclx
     [NativeTypeName("uint8_t")]
     public byte version;
 
-    [NativeTypeName("enum heif_color_primaries")]
     public heif_color_primaries color_primaries;
 
-    [NativeTypeName("enum heif_transfer_characteristics")]
     public heif_transfer_characteristics transfer_characteristics;
 
-    [NativeTypeName("enum heif_matrix_coefficients")]
     public heif_matrix_coefficients matrix_coefficients;
 
     [NativeTypeName("uint8_t")]

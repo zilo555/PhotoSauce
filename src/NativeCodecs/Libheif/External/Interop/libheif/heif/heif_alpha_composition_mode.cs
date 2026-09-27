@@ -7,12 +7,9 @@
 
 namespace PhotoSauce.Interop.Libheif;
 
-internal unsafe partial struct heif_error
+internal enum heif_alpha_composition_mode
 {
-    public heif_error_code code;
-
-    public heif_suberror_code subcode;
-
-    [NativeTypeName("const char *")]
-    public sbyte* message;
+    heif_alpha_composition_mode_none,
+    heif_alpha_composition_mode_solid_color,
+    heif_alpha_composition_mode_checkerboard,
 }

@@ -21,18 +21,12 @@ internal unsafe partial struct heif_encoding_options
     [NativeTypeName("uint8_t")]
     public byte save_two_colr_boxes_when_ICC_and_nclx_available;
 
-    [NativeTypeName("struct heif_color_profile_nclx *")]
     public heif_color_profile_nclx* output_nclx_profile;
 
     [NativeTypeName("uint8_t")]
     public byte macOS_compatibility_workaround_no_nclx_profile;
 
-    [NativeTypeName("enum heif_orientation")]
     public heif_orientation image_orientation;
 
-    [NativeTypeName("struct heif_color_conversion_options")]
     public heif_color_conversion_options color_conversion_options;
-
-    [NativeTypeName("uint8_t")]
-    public byte prefer_uncC_short_form;
 }

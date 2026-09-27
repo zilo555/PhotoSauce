@@ -7,12 +7,9 @@
 
 namespace PhotoSauce.Interop.Libheif;
 
-internal unsafe partial struct heif_error
+internal partial struct heif_complex64
 {
-    public heif_error_code code;
+    public double real;
 
-    public heif_suberror_code subcode;
-
-    [NativeTypeName("const char *")]
-    public sbyte* message;
+    public double imaginary;
 }
